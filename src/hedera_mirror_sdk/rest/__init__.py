@@ -1,15 +1,7 @@
 import os
 from hedera_mirror_sdk.error import APIError
-from hedera_mirror_sdk.api_resources.mixins import create_params, PathBuilder
+from hedera_mirror_sdk.api_resources.mixins import PathBuilder
 from hedera_mirror_sdk.api_resources.api_requester import APIRequestor
-import base64
-import hmac
-import hashlib
-from datetime import datetime
-from uuid import uuid4
-import json
-import requests
-
 
 
 class Client(object):
@@ -71,7 +63,7 @@ class Client(object):
             domain_action=domain_action,
             params=params).build()
 
-        print(f'Endpoint (url): \n{url}\n\n')
+        # print(f'Endpoint (url): \n{url}\n\n')
         api = APIRequestor(url = url)
 
         if method == "POST":
@@ -84,14 +76,14 @@ class Client(object):
             response = api.delete()
 
         if method == "DELETE":
-            print(
-                f'Response:\nStatus:\n{response.status_code}\nMessage:\nObject deleted'
-            )
+            # print(
+            #     f'Response:\nStatus:\n{response.status_code}\nMessage:\nObject deleted'
+            # )
             json_response = {}
         else:
-            print(
-                f'Response:\nStatus:\n{response.status_code}\nJson Response:\n{response.json()}'
-            )
+            # print(
+            #     f'Response:\nStatus:\n{response.status_code}\nJson Response:\n{response.json()}'
+            # )
             json_response = response.json()
         return {
             "status": response.status_code,

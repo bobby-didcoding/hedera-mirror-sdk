@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: hedera-mirror-sdk
-Version: 0.0.1
+Version: 0.0.6
 Summary: This is a simple Python library to facilitate the usage of the Hedera mirror node API
 Home-page: https://github.com/bobby-didcoding/hedera-mirror-sdk
 Author: Bobby Stearman
